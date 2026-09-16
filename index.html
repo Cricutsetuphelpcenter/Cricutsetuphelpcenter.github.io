@@ -1,1 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Cricut.com/setup – Cricut Machine Setup Guide</title>
+  <meta name="description" content="Learn how to use Cricut.com/setup to get your Cricut machine ready. Follow the simple setup guide, connect your device, install the required software and start creating.">
+  <meta name="keywords" content="Cricut.com/setup, Cricut setup, Cricut machine setup, Cricut Design Space, Cricut setup guide">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --ink:#202033;
+      --purple:#6c4cff;
+      --pink:#ff5f9e;
+      --orange:#ff9d4d;
+      --yellow:#ffd45c;
+      --soft:#f7f6ff;
+      --white:#ffffff;
+      --muted:#707084;
+      --border:#e8e6f2;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Inter, Arial, sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .topbar{
+      background:#202033;
+      color:#fff;
+      text-align:center;
+      padding:10px 20px;
+      font-size:13px;
+      letter-spacing:.2px;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(15px);
+      border-bottom:1px solid rgba(30,30,50,.08);
+    }
+
+    .nav{
+      max-width:1180px;
+      margin:auto;
+      height:76px;
+      padding:0 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      font-size:22px;
+      font-weight:900;
+    }
+
+    .logo-mark{
+      width:42px;
+      height:42px;
+      border-radius:13px;
+      display:grid;
+      place-items:center;
+      color:white;
+      background:linear-gradient(135deg,#6c4cff,#ff5f9e);
+      box-shadow:0 9px 22px rgba(108,76,255,.25);
+      font-size:20px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      align-items:center;
+      font-size:14px;
+      font-weight:700;
+      color:#555568;
+    }
+
+    .nav-links a:hover{
+      color:var(--purple);
+    }
+
+    .nav-btn{
+      background:#202033;
+      color:#fff;
+      padding:11px 18px;
+      border-radius:12px;
+      transition:.25s;
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-2px);
+      background:var(--purple);
+    }
+
+    /* HERO */
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      min-height:700px;
+      background:
+        radial-gradient(circle at 12% 20%,rgba(255,95,158,.18),transparent 25%),
+        radial-gradient(circle at 88% 15%,rgba(108,76,255,.2),transparent 28%),
+        linear-gradient(135deg,#fff 0%,#faf8ff 55%,#fff5f9 100%);
+    }
+
+    .blob{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(2px);
+      opacity:.55;
+      animation:float 7s ease-in-out infinite;
+    }
+
+    .blob.one{
+      width:110px;
+      height:110px;
+      background:#ffd45c;
+      left:-35px;
+      top:170px;
+    }
+
+    .blob.two{
+      width:75px;
+      height:75px;
+      background:#ff5f9e;
+      right:8%;
+      bottom:90px;
+      animation-delay:1s;
+    }
+
+    .blob.three{
+      width:48px;
+      height:48px;
+      background:#6c4cff;
+      right:30%;
+      top:100px;
+      animation-delay:2s;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0) rotate(0deg)}
+      50%{transform:translateY(-18px) rotate(8deg)}
+    }
+
+    .hero-inner{
+      max-width:1180px;
+      margin:auto;
+      min-height:620px;
+      padding:75px 22px 70px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:1px solid var(--border);
+      padding:8px 13px;
+      border-radius:30px;
+      color:#6653c9;
+      font-size:13px;
+      font-weight:800;
+      box-shadow:0 8px 25px rgba(50,40,100,.06);
+      margin-bottom:20px;
+    }
+
+    .eyebrow span{
+      width:8px;
+      height:8px;
+      background:#ff5f9e;
+      border-radius:50%;
+    }
+
+    h1{
+      font-size:clamp(42px,5vw,68px);
+      line-height:1.03;
+      letter-spacing:-3px;
+      margin-bottom:22px;
+    }
+
+    h1 .gradient{
+      background:linear-gradient(90deg,#6c4cff,#ff4e98,#ff9d4d);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .hero-text{
+      color:var(--muted);
+      max-width:570px;
+      font-size:18px;
+      margin-bottom:30px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:13px;
+      flex-wrap:wrap;
+    }
+
+    .primary{
+      background:linear-gradient(135deg,#6c4cff,#8c69ff);
+      color:white;
+      padding:15px 25px;
+      border-radius:14px;
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(108,76,255,.25);
+      transition:.25s;
+    }
+
+    .primary:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 35px rgba(108,76,255,.32);
+    }
+
+    .secondary{
+      background:white;
+      border:1px solid var(--border);
+      padding:15px 25px;
+      border-radius:14px;
+      font-weight:800;
+      transition:.25s;
+    }
+
+    .secondary:hover{
+      border-color:#bcb2ff;
+      transform:translateY(-3px);
+    }
+
+    /* MACHINE MOCKUP */
+
+    .machine-area{
+      position:relative;
+      min-height:480px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .circle-bg{
+      position:absolute;
+      width:430px;
+      height:430px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#eeeaff,#ffeaf3);
+      box-shadow:inset 0 0 0 20px rgba(255,255,255,.6);
+    }
+
+    .machine{
+      position:relative;
+      width:390px;
+      height:270px;
+      border-radius:26px;
+      background:linear-gradient(160deg,#ffffff,#e8e7f1);
+      box-shadow:
+        0 35px 60px rgba(42,35,80,.2),
+        inset 0 2px 2px white;
+      transform:perspective(800px) rotateY(-8deg) rotateX(4deg);
+      z-index:3;
+    }
+
+    .machine-top{
+      position:absolute;
+      top:0;
+      left:30px;
+      right:30px;
+      height:88px;
+      background:linear-gradient(180deg,#f8f8fb,#dedee8);
+      border-radius:26px 26px 10px 10px;
+      border-bottom:3px solid #c9c8d5;
+    }
+
+    .machine-slot{
+      position:absolute;
+      left:50px;
+      right:50px;
+      bottom:53px;
+      height:68px;
+      background:#d8d7e2;
+      border-radius:7px;
+      box-shadow:inset 0 5px 10px rgba(0,0,0,.13);
+    }
+
+    .mat{
+      position:absolute;
+      left:80px;
+      right:55px;
+      bottom:18px;
+      height:55px;
+      background:linear-gradient(90deg,#765cff,#a18eff);
+      border-radius:4px;
+      box-shadow:0 10px 15px rgba(60,40,130,.2);
+    }
+
+    .mat:after{
+      content:"CREATE";
+      position:absolute;
+      color:rgba(255,255,255,.8);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:3px;
+      right:20px;
+      top:18px;
+    }
+
+    .wheel{
+      position:absolute;
+      right:43px;
+      top:26px;
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      background:#fff;
+      border:5px solid #c7c5d3;
+      box-shadow:0 3px 8px rgba(0,0,0,.1);
+    }
+
+    .tool{
+      position:absolute;
+      left:65px;
+      top:28px;
+      width:42px;
+      height:80px;
+      border-radius:10px;
+      background:#fff;
+      box-shadow:0 5px 15px rgba(0,0,0,.13);
+    }
+
+    .tool:after{
+      content:"";
+      position:absolute;
+      width:12px;
+      height:25px;
+      background:#77758a;
+      bottom:-17px;
+      left:15px;
+      border-radius:0 0 8px 8px;
+    }
+
+    .floating-card{
+      position:absolute;
+      z-index:5;
+      background:#fff;
+      border:1px solid rgba(255,255,255,.8);
+      border-radius:17px;
+      padding:15px 18px;
+      box-shadow:0 20px 45px rgba(46,39,80,.16);
+    }
+
+    .float-one{
+      left:0;
+      top:85px;
+      animation:float 6s ease-in-out infinite;
+    }
+
+    .float-two{
+      right:0;
+      bottom:70px;
+      animation:float 6s ease-in-out infinite;
+      animation-delay:1.4s;
+    }
+
+    .mini-title{
+      font-size:11px;
+      color:#858396;
+      font-weight:700;
+      margin-bottom:4px;
+    }
+
+    .mini-value{
+      font-size:17px;
+      font-weight:900;
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:95px 22px;
+    }
+
+    .container{
+      max-width:1180px;
+      margin:auto;
+    }
+
+    .section-heading{
+      max-width:700px;
+      margin:0 auto 55px;
+      text-align:center;
+    }
+
+    .section-heading .tag{
+      color:var(--purple);
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      font-size:12px;
+      margin-bottom:10px;
+      display:block;
+    }
+
+    .section-heading h2{
+      font-size:42px;
+      letter-spacing:-1.7px;
+      margin-bottom:14px;
+    }
+
+    .section-heading p{
+      color:var(--muted);
+    }
+
+    /* QUICK ANSWER */
+
+    .quick{
+      background:#fff;
+    }
+
+    .quick-box{
+      border-radius:28px;
+      padding:38px;
+      display:grid;
+      grid-template-columns:1.4fr .6fr;
+      gap:30px;
+      background:linear-gradient(135deg,#202033,#332d57);
+      color:#fff;
+      box-shadow:0 25px 55px rgba(34,29,65,.18);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .quick-box:after{
+      content:"";
+      position:absolute;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      background:rgba(255,95,158,.12);
+      right:-100px;
+      top:-120px;
+    }
+
+    .quick-box h3{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+
+    .quick-box p{
+      color:#d8d5e5;
+      max-width:700px;
+    }
+
+    .quick-label{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      z-index:2;
+    }
+
+    .ready{
+      background:#fff;
+      color:#332d57;
+      padding:20px 25px;
+      border-radius:18px;
+      font-weight:900;
+      text-align:center;
+      min-width:190px;
+    }
+
+    .ready small{
+      display:block;
+      color:#89859a;
+      font-weight:600;
+      margin-top:4px;
+    }
+
+    /* STEPS */
+
+    .steps{
+      background:var(--soft);
+    }
+
+    .step-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .step{
+      background:#fff;
+      border:1px solid var(--border);
+      padding:28px 23px;
+      border-radius:22px;
+      transition:.3s;
+      position:relative;
+    }
+
+    .step:hover{
+      transform:translateY(-7px);
+      box-shadow:0 20px 40px rgba(55,45,100,.1);
+    }
+
+    .step-num{
+      width:43px;
+      height:43px;
+      display:grid;
+      place-items:center;
+      border-radius:13px;
+      color:#fff;
+      font-weight:900;
+      background:linear-gradient(135deg,#6c4cff,#ff5f9e);
+      margin-bottom:22px;
+    }
+
+    .step h3{
+      margin-bottom:8px;
+      font-size:19px;
+    }
+
+    .step p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* DEVICES */
+
+    .device-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .device{
+      padding:25px;
+      border-radius:20px;
+      border:1px solid var(--border);
+      background:#fff;
+      transition:.25s;
+    }
+
+    .device:hover{
+      border-color:#c9c0ff;
+      transform:translateY(-5px);
+    }
+
+    .device-icon{
+      font-size:32px;
+      margin-bottom:14px;
+    }
+
+    .device h3{
+      font-size:17px;
+      margin-bottom:5px;
+    }
+
+    .device p{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* CHECKLIST */
+
+    .check-section{
+      background:#faf9ff;
+    }
+
+    .check-layout{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+    }
+
+    .check-card{
+      background:#fff;
+      padding:35px;
+      border:1px solid var(--border);
+      border-radius:25px;
+    }
+
+    .check-card h3{
+      font-size:24px;
+      margin-bottom:20px;
+    }
+
+    .check-list{
+      list-style:none;
+    }
+
+    .check-list li{
+      display:flex;
+      gap:12px;
+      padding:13px 0;
+      border-bottom:1px solid #eeeef4;
+      color:#555568;
+      font-size:15px;
+    }
+
+    .check-list li:last-child{
+      border-bottom:0;
+    }
+
+    .check{
+      width:22px;
+      height:22px;
+      flex:none;
+      border-radius:7px;
+      background:#eeeaff;
+      color:#6c4cff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:12px;
+    }
+
+    /* PROJECT CARDS */
+
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .project{
+      min-height:230px;
+      border-radius:25px;
+      padding:28px;
+      overflow:hidden;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+
+    .project:nth-child(1){
+      background:linear-gradient(135deg,#eeeaff,#dcd5ff);
+    }
+
+    .project:nth-child(2){
+      background:linear-gradient(135deg,#ffeaf2,#ffd3e3);
+    }
+
+    .project:nth-child(3){
+      background:linear-gradient(135deg,#fff3d9,#ffe4a4);
+    }
+
+    .project-art{
+      position:absolute;
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      right:30px;
+      top:25px;
+      background:rgba(255,255,255,.62);
+    }
+
+    .project-art:after{
+      content:"✦";
+      position:absolute;
+      font-size:60px;
+      left:34px;
+      top:27px;
+      color:rgba(75,60,130,.35);
+    }
+
+    .project h3{
+      font-size:22px;
+      position:relative;
+      z-index:2;
+    }
+
+    .project p{
+      color:#656174;
+      font-size:14px;
+      position:relative;
+      z-index:2;
+    }
+
+    /* TROUBLESHOOT */
+
+    .trouble{
+      background:#202033;
+      color:#fff;
+    }
+
+    .trouble .section-heading p{
+      color:#bdb9cb;
+    }
+
+    .trouble-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .trouble-card{
+      background:#2c2b40;
+      border:1px solid #414054;
+      border-radius:20px;
+      padding:26px;
+    }
+
+    .trouble-card h3{
+      font-size:18px;
+      margin-bottom:9px;
+    }
+
+    .trouble-card p{
+      color:#bbb8c9;
+      font-size:14px;
+    }
+
+    /* FAQ */
+
+    .faq{
+      max-width:850px;
+      margin:auto;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:17px;
+      margin-bottom:12px;
+      overflow:hidden;
+    }
+
+    summary{
+      cursor:pointer;
+      list-style:none;
+      padding:21px 24px;
+      font-weight:800;
+      position:relative;
+      padding-right:50px;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    summary:after{
+      content:"+";
+      position:absolute;
+      right:23px;
+      font-size:23px;
+      color:var(--purple);
+    }
+
+    details[open] summary:after{
+      content:"−";
+    }
+
+    details p{
+      padding:0 24px 22px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* CTA */
+
+    .final-cta{
+      padding-top:30px;
+      padding-bottom:100px;
+    }
+
+    .cta-box{
+      text-align:center;
+      border-radius:30px;
+      padding:65px 25px;
+      color:#fff;
+      background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.14),transparent 25%),
+        linear-gradient(135deg,#6c4cff,#a14cff 50%,#ff5f9e);
+      box-shadow:0 25px 60px rgba(108,76,255,.2);
+    }
+
+    .cta-box h2{
+      font-size:42px;
+      letter-spacing:-1.5px;
+      margin-bottom:13px;
+    }
+
+    .cta-box p{
+      max-width:620px;
+      margin:0 auto 25px;
+      color:#eeeaff;
+    }
+
+    .cta-btn{
+      display:inline-block;
+      background:#fff;
+      color:#4d36b8;
+      padding:15px 25px;
+      border-radius:14px;
+      font-weight:900;
+      transition:.25s;
+    }
+
+    .cta-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 25px rgba(0,0,0,.16);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#151520;
+      color:#aaa7b7;
+      padding:45px 22px 30px;
+    }
+
+    .footer-inner{
+      max-width:1180px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      align-items:flex-start;
+    }
+
+    .footer-brand{
+      color:#fff;
+      font-size:20px;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+
+    footer p{
+      font-size:13px;
+      max-width:560px;
+    }
+
+    .copyright{
+      margin-top:30px;
+      padding-top:20px;
+      border-top:1px solid #292934;
+      text-align:center;
+      font-size:12px;
+      color:#777585;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:950px){
+      .hero-inner{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .hero-text{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .hero-actions{
+        justify-content:center;
+      }
+
+      .machine-area{
+        margin-top:10px;
+      }
+
+      .step-grid,
+      .device-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .quick-box{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .check-layout{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:650px){
+      .nav-links{
+        display:none;
+      }
+
+      .nav{
+        height:68px;
+      }
+
+      h1{
+        letter-spacing:-2px;
+      }
+
+      section{
+        padding:70px 18px;
+      }
+
+      .hero-inner{
+        padding:60px 18px 50px;
+      }
+
+      .circle-bg{
+        width:300px;
+        height:300px;
+      }
+
+      .machine{
+        width:300px;
+        height:215px;
+      }
+
+      .machine-top{
+        left:20px;
+        right:20px;
+        height:68px;
+      }
+
+      .machine-slot{
+        left:35px;
+        right:35px;
+        bottom:42px;
+        height:53px;
+      }
+
+      .mat{
+        left:60px;
+        right:38px;
+        bottom:15px;
+        height:43px;
+      }
+
+      .tool{
+        left:48px;
+        top:20px;
+        width:32px;
+        height:65px;
+      }
+
+      .tool:after{
+        left:10px;
+      }
+
+      .wheel{
+        right:30px;
+        top:19px;
+      }
+
+      .float-one{
+        left:0;
+        top:45px;
+      }
+
+      .float-two{
+        right:0;
+        bottom:45px;
+      }
+
+      .step-grid,
+      .device-grid,
+      .project-grid,
+      .trouble-grid{
+        grid-template-columns:1fr;
+      }
+
+      .section-heading h2{
+        font-size:32px;
+      }
+
+      .cta-box h2{
+        font-size:32px;
+      }
+
+      .quick-box{
+        padding:28px 22px;
+      }
+
+      .check-card{
+        padding:27px 22px;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    ✦ Helpful Cricut setup information for new and existing users
+  </div>
+
+  <header>
+    <nav class="nav">
+      <a href="#" class="logo">
+        <span class="logo-mark">✂</span>
+        Cricut Setup Guide
+      </a>
+
+      <div class="nav-links">
+        <a href="#steps">Setup</a>
+        <a href="#devices">Devices</a>
+        <a href="#help">Troubleshooting</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://cricut.com/" target="_blank" class="nav-btn">Official Cricut ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+    <div class="blob three"></div>
+
+    <div class="hero-inner">
+
+      <div>
+        <div class="eyebrow">
+          <span></span>
+          Simple • Creative • Beginner Friendly
+        </div>
+
+        <h1>
+          Your Cricut setup,
+          <span class="gradient">made simple.</span>
+        </h1>
+
+        <p class="hero-text">
+          Use this Cricut.com/setup guide to understand the basic setup process,
+          connect your machine, prepare your device and get ready for your first creative project.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#steps" class="primary">Start Setup Guide →</a>
+          <a href="https://cricut.com/" target="_blank" class="secondary">Visit Cricut</a>
+        </div>
+      </div>
+
+      <div class="machine-area">
+
+        <div class="circle-bg"></div>
+
+        <div class="floating-card float-one">
+          <div class="mini-title">SETUP STATUS</div>
+          <div class="mini-value">Ready to Create ✓</div>
+        </div>
+
+        <div class="machine">
+          <div class="machine-top"></div>
+          <div class="tool"></div>
+          <div class="wheel"></div>
+          <div class="machine-slot"></div>
+          <div class="mat"></div>
+        </div>
+
+        <div class="floating-card float-two">
+          <div class="mini-title">CREATIVE MODE</div>
+          <div class="mini-value">Let's Make ✦</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- QUICK ANSWER -->
+
+  <section class="quick">
+    <div class="container">
+
+      <div class="quick-box">
+        <div>
+          <h3>What is Cricut.com/setup?</h3>
+          <p>
+            Cricut.com/setup is commonly used as a starting point for getting a Cricut
+            cutting machine ready. Depending on your machine and device, setup may include
+            connecting the machine, installing or opening Cricut Design Space, signing in,
+            pairing the machine and completing the initial setup steps.
+          </p>
+        </div>
+
+        <div class="quick-label">
+          <div class="ready">
+            ✨ Setup Ready
+            <small>Follow the steps below</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SETUP STEPS -->
+
+  <section class="steps" id="steps">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="tag">The Setup Journey</span>
+        <h2>Four simple steps to get started</h2>
+        <p>
+          Follow the basic sequence below and keep your machine and device nearby.
+        </p>
+      </div>
+
+      <div class="step-grid">
+
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Prepare Your Machine</h3>
+          <p>
+            Place your Cricut machine on a stable surface and connect the required power cable.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Prepare Your Device</h3>
+          <p>
+            Use a compatible computer or mobile device and make sure it has a reliable internet connection.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Open Design Space</h3>
+          <p>
+            Install or open Cricut Design Space and sign in to your Cricut account when prompted.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3>Connect & Create</h3>
+          <p>
+            Follow the on-screen instructions to connect your machine and begin a test or creative project.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DEVICES -->
+
+  <section id="devices">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="tag">Device Support</span>
+        <h2>Choose the device you want to use</h2>
+        <p>
+          The exact setup experience can vary depending on your machine and operating system.
+        </p>
+      </div>
+
+      <div class="device-grid">
+
+        <div class="device">
+          <div class="device-icon">💻</div>
+          <h3>Windows PC</h3>
+          <p>Use Cricut software on a compatible Windows computer.</p>
+        </div>
+
+        <div class="device">
+          <div class="device-icon">🍎</div>
+          <h3>Mac</h3>
+          <p>Set up your Cricut machine using a compatible Mac computer.</p>
+        </div>
+
+        <div class="device">
+          <div class="device-icon">📱</div>
+          <h3>iPhone / iPad</h3>
+          <p>Mobile setup may be available depending on your Cricut machine.</p>
+        </div>
+
+        <div class="device">
+          <div class="device-icon">🤖</div>
+          <h3>Android</h3>
+          <p>Use a compatible Android device where supported by Cricut.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CHECKLIST -->
+
+  <section class="check-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="tag">Before You Begin</span>
+        <h2>A little preparation goes a long way</h2>
+        <p>
+          Keep these items ready before starting your Cricut setup.
+        </p>
+      </div>
+
+      <div class="check-layout">
+
+        <div class="check-card">
+          <h3>Machine Checklist</h3>
+
+          <ul class="check-list">
+            <li><span class="check">✓</span> Cricut machine is nearby</li>
+            <li><span class="check">✓</span> Power adapter is available</li>
+            <li><span class="check">✓</span> Machine is placed on a stable surface</li>
+            <li><span class="check">✓</span> Cutting mat and basic materials are ready</li>
+            <li><span class="check">✓</span> Machine is switched on when required</li>
+          </ul>
+        </div>
+
+        <div class="check-card">
+          <h3>Device Checklist</h3>
+
+          <ul class="check-list">
+            <li><span class="check">✓</span> Compatible computer or mobile device</li>
+            <li><span class="check">✓</span> Internet connection available</li>
+            <li><span class="check">✓</span> Cricut account credentials ready</li>
+            <li><span class="check">✓</span> Required Cricut software installed</li>
+            <li><span class="check">✓</span> Bluetooth or USB available if needed</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section>
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="tag">Make Something</span>
+        <h2>Turn setup into creativity</h2>
+        <p>
+          Once your machine is ready, you can explore different types of creative projects.
+        </p>
+      </div>
+
+      <div class="project-grid">
+
+        <div class="project">
+          <div class="project-art"></div>
+          <h3>Custom Cards</h3>
+          <p>Create personalized cards and paper crafts.</p>
+        </div>
+
+        <div class="project">
+          <div class="project-art"></div>
+          <h3>Vinyl Designs</h3>
+          <p>Explore custom labels, decals and decorative designs.</p>
+        </div>
+
+        <div class="project">
+          <div class="project-art"></div>
+          <h3>DIY Projects</h3>
+          <p>Experiment with materials and create something unique.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TROUBLESHOOTING -->
+
+  <section class="trouble" id="help">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="tag" style="color:#b7aaff;">Quick Fixes</span>
+        <h2>Having trouble with setup?</h2>
+        <p>
+          Try these basic checks before moving on to more advanced support.
+        </p>
+      </div>
+
+      <div class="trouble-grid">
+
+        <div class="trouble-card">
+          <h3>Machine Not Detected</h3>
+          <p>
+            Check that the machine is powered on and that your selected connection method is available.
+          </p>
+        </div>
+
+        <div class="trouble-card">
+          <h3>Bluetooth Problem</h3>
+          <p>
+            Make sure Bluetooth is enabled on your device and keep the machine nearby during pairing.
+          </p>
+        </div>
+
+        <div class="trouble-card">
+          <h3>Software Issue</h3>
+          <p>
+            Check your internet connection and make sure you are using the current supported version of the software.
+          </p>
+        </div>
+
+        <div class="trouble-card">
+          <h3>USB Connection</h3>
+          <p>
+            If you use USB, check both ends of the cable and try another compatible port if necessary.
+          </p>
+        </div>
+
+        <div class="trouble-card">
+          <h3>Sign-In Trouble</h3>
+          <p>
+            Confirm that you are using the correct Cricut account credentials and follow the available recovery options.
+          </p>
+        </div>
+
+        <div class="trouble-card">
+          <h3>Still Stuck?</h3>
+          <p>
+            Visit the official Cricut website and use its current support resources for machine-specific assistance.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section id="faq">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="tag">FAQ</span>
+        <h2>Cricut setup questions answered</h2>
+        <p>
+          Quick answers to common questions about getting started.
+        </p>
+      </div>
+
+      <div class="faq">
+
+        <details>
+          <summary>What is Cricut.com/setup used for?</summary>
+          <p>
+            It can be used as a starting point for Cricut machine setup. The exact process
+            depends on the Cricut machine model and the device you are using.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need Cricut Design Space?</summary>
+          <p>
+            Many Cricut machines use Cricut Design Space to prepare and send projects to the machine.
+            Check the official Cricut resources for requirements specific to your model.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I set up Cricut on a phone?</summary>
+          <p>
+            Some Cricut machines support mobile devices. Availability and features can vary by
+            machine and operating system.
+          </p>
+        </details>
+
+        <details>
+          <summary>Why is my Cricut machine not connecting?</summary>
+          <p>
+            Check power, Bluetooth or USB availability, device compatibility and your internet
+            connection. Restarting the machine and software can also help with temporary connection issues.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need an internet connection?</summary>
+          <p>
+            Internet access may be needed for account setup, software installation, updates and
+            certain online features.
+          </p>
+        </details>
+
+        <details>
+          <summary>Where can I get official Cricut help?</summary>
+          <p>
+            For official machine-specific information and support, visit the Cricut website directly.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FINAL CTA -->
+
+  <section class="final-cta">
+    <div class="container">
+
+      <div class="cta-box">
+        <h2>Ready to start creating?</h2>
+
+        <p>
+          Follow the setup steps, connect your Cricut machine and explore
+          your first creative project.
+        </p>
+
+        <a href="https://cricut.com/" target="_blank" class="cta-btn">
+          Visit Official Cricut Website ↗
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-brand">Cricut Setup Guide</div>
+        <p>
+          Helpful informational content designed to make the Cricut setup process
+          easier to understand for beginners and existing users.
+        </p>
+      </div>
+
+      <div>
+        <p>
+          This is an independent informational website and is not affiliated with,
+          sponsored by, or endorsed by Cricut, Inc.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Cricut Setup Guide. For informational purposes only.
+    </div>
+  </footer>
+
+</body>
+</html>
